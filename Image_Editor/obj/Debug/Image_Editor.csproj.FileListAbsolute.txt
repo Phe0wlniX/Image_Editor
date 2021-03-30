@@ -1,0 +1,10 @@
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\bin\Debug\Image_Editor.exe.config
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\bin\Debug\Image_Editor.exe
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\bin\Debug\Image_Editor.pdb
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.csprojAssemblyReference.cache
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.Form1.resources
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.Properties.Resources.resources
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.csproj.GenerateResource.cache
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.csproj.CoreCompileInputs.cache
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.exe
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.pdb
