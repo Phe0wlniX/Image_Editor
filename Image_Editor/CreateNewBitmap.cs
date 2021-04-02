@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Image_Editor
 {
-    public partial class Form1 : Form
+    public partial class F_CreateNewBitmap : Form
     {
-        public Form1()
+        public F_CreateNewBitmap()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterParent;
         }
     }
 }

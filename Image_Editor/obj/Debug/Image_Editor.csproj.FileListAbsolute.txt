@@ -2,9 +2,11 @@ D:\Group6\Project39(C#)\Image_Editor\Image_Editor\bin\Debug\Image_Editor.exe.con
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\bin\Debug\Image_Editor.exe
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\bin\Debug\Image_Editor.pdb
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.csprojAssemblyReference.cache
-D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.Form1.resources
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.Properties.Resources.resources
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.csproj.GenerateResource.cache
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.csproj.CoreCompileInputs.cache
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.exe
 D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.pdb
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.F_CreateNewBitmap.resources
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.MainForm.resources
+D:\Group6\Project39(C#)\Image_Editor\Image_Editor\obj\Debug\Image_Editor.F_Image.resources
