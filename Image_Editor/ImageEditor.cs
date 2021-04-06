@@ -30,6 +30,11 @@ namespace Image_Editor
             brushRadius = 30;
         }
 
+        public void LoadImage(string ImagePath)
+        {
+            image = new Bitmap(ImagePath);
+        }
+
         public ImageEditor(int width, int heidth)
         {
             image = new Bitmap(width, heidth);
@@ -41,6 +46,16 @@ namespace Image_Editor
                 }
             }
             brushRadius = 30;
+        }
+
+        public void SetBrushColor(Color color)
+        {
+            brushColor = color;
+        }
+
+        public void SetBrushRadius (int radius)
+        {
+            brushRadius = radius;
         }
     }
 }

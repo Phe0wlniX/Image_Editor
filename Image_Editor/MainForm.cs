@@ -14,7 +14,7 @@ namespace Image_Editor
     public struct CrNewDialogLongRes
     {
         public int width;
-        public int heigth;
+        public int heidth;
         public bool ready;
     }
 
@@ -29,6 +29,11 @@ namespace Image_Editor
         public MainForm()
         {
             InitializeComponent();
+
+            p_color.BackColor = Color.White;
+            CreateField();
+            openFile.Filter = "All files (*.png; *.jpg; *.jpeg;)|*.png; *.jpg; *.jpeg";
+            saveFile.Filter = "All files (*.png; *.jpg; *.jpeg;)|*.png; *.jpg; *.jpeg";
         }
         public void CreateField()
         {
@@ -42,6 +47,13 @@ namespace Image_Editor
         {
             F_CreateNewBitmap createNewBitmap = new F_CreateNewBitmap();
             createNewBitmap.ShowDialog();
+            if(diagRes.ready)
+            {
+                imageEditor = new ImageEditor(diagRes.width, diagRes.heidth);
+                imageField.Refresh();
+                p_color.BackColor = Color.White;
+                nud_BrushRadius.Value = 30;
+            }
         }
 
         private void bt_open_window_Click(object sender, EventArgs e)
@@ -59,6 +71,35 @@ namespace Image_Editor
                 imageField.Close();
                 imageFieldOpened = false;
             }
+        }
+
+        private void p_color_Paint(object sender, PaintEventArgs e)
+        {
+            if(colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                p_color.BackColor = colorDialog.Color;
+                imageEditor.SetBrushColor(colorDialog.Color);
+            }
+        }
+
+        private void nud_BrushRadius_ValueChanged(object sender, EventArgs e)
+        {
+            imageEditor.SetBrushRadius(Convert.ToInt32(nud_BrushRadius.Value));
+        }
+
+        private void bt_download_Click(object sender, EventArgs e)
+        {
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFile.FileName;
+                imageEditor.LoadImage(filePath);
+                imageField.Refresh();
+            }
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            if (saveFile.ShowDialog())
         }
     }
 }

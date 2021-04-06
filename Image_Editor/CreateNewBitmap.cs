@@ -16,6 +16,20 @@ namespace Image_Editor
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterParent;
+            MainForm.diagRes.ready = false;
+        }
+
+        private void bе_ok_Click(object sender, EventArgs e)
+        {
+            MainForm.diagRes.width = Convert.ToInt32(nud_Width.Value);
+            MainForm.diagRes.heidth = Convert.ToInt32(nud_Heidth.Value);
+            MainForm.diagRes.ready = true;
+            this.Close();
+        }
+
+        private void bt_undone_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

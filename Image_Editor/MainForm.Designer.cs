@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.File = new System.Windows.Forms.ToolStripMenuItem();
-            this.bt_download = new System.Windows.Forms.ToolStripMenuItem();
+            this.openImageDialog = new System.Windows.Forms.ToolStripMenuItem();
             this.Save = new System.Windows.Forms.ToolStripMenuItem();
             this.Create_new = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_View = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,15 +41,18 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.bt_instument = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nud_BrushRadius = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.p_color = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_BrushRadius)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -68,29 +71,31 @@
             // File
             // 
             this.File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bt_download,
+            this.openImageDialog,
             this.Save,
             this.Create_new});
             this.File.Name = "File";
             this.File.Size = new System.Drawing.Size(48, 20);
             this.File.Text = "Файл";
             // 
-            // bt_download
+            // openImageDialog
             // 
-            this.bt_download.Name = "bt_download";
-            this.bt_download.Size = new System.Drawing.Size(156, 22);
-            this.bt_download.Text = "Загрузить";
+            this.openImageDialog.Name = "openImageDialog";
+            this.openImageDialog.Size = new System.Drawing.Size(180, 22);
+            this.openImageDialog.Text = "Загрузить";
+            this.openImageDialog.Click += new System.EventHandler(this.bt_download_Click);
             // 
             // Save
             // 
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(156, 22);
+            this.Save.Size = new System.Drawing.Size(180, 22);
             this.Save.Text = "Сохранить как";
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // Create_new
             // 
             this.Create_new.Name = "Create_new";
-            this.Create_new.Size = new System.Drawing.Size(156, 22);
+            this.Create_new.Size = new System.Drawing.Size(180, 22);
             this.Create_new.Text = "Создать новый";
             this.Create_new.Click += new System.EventHandler(this.Create_new_Click);
             // 
@@ -144,7 +149,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.nud_BrushRadius);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 24);
@@ -152,12 +157,13 @@
             this.panel2.Size = new System.Drawing.Size(200, 404);
             this.panel2.TabIndex = 4;
             // 
-            // numericUpDown1
+            // nud_BrushRadius
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 106);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 0;
+            this.nud_BrushRadius.Location = new System.Drawing.Point(6, 106);
+            this.nud_BrushRadius.Name = "nud_BrushRadius";
+            this.nud_BrushRadius.Size = new System.Drawing.Size(120, 20);
+            this.nud_BrushRadius.TabIndex = 0;
+            this.nud_BrushRadius.ValueChanged += new System.EventHandler(this.nud_BrushRadius_ValueChanged);
             // 
             // groupBox1
             // 
@@ -178,6 +184,11 @@
             this.p_color.Size = new System.Drawing.Size(56, 24);
             this.p_color.TabIndex = 5;
             this.p_color.Tag = "";
+            this.p_color.Paint += new System.Windows.Forms.PaintEventHandler(this.p_color_Paint);
+            // 
+            // openFile
+            // 
+            this.openFile.FileName = "openFileDialog1";
             // 
             // MainForm
             // 
@@ -196,7 +207,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_BrushRadius)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -208,7 +219,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem File;
-        private System.Windows.Forms.ToolStripMenuItem bt_download;
+        private System.Windows.Forms.ToolStripMenuItem openImageDialog;
         private System.Windows.Forms.ToolStripMenuItem Save;
         private System.Windows.Forms.ToolStripMenuItem Create_new;
         private System.Windows.Forms.ToolStripMenuItem menu_View;
@@ -218,11 +229,14 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel bt_instument;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nud_BrushRadius;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel p_color;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.OpenFileDialog openFile;
+        private System.Windows.Forms.SaveFileDialog saveFile;
     }
 }
 
