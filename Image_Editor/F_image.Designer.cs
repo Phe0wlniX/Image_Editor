@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox_X = new System.Windows.Forms.TextBox();
             this.textBox_Y = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_X = new System.Windows.Forms.Label();
             this.label_Y = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.drawTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,11 +59,16 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(478, 445);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // label_X
             // 
@@ -91,6 +98,11 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 445);
             this.panel1.TabIndex = 6;
+            // 
+            // drawTimer
+            // 
+            this.drawTimer.Interval = 10;
+            this.drawTimer.Tick += new System.EventHandler(this.drawTimer_Tick);
             // 
             // F_Image
             // 
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Label label_X;
         private System.Windows.Forms.Label label_Y;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer drawTimer;
     }
 }

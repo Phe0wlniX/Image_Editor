@@ -45,10 +45,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.p_color = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,21 +81,21 @@
             // openImageDialog
             // 
             this.openImageDialog.Name = "openImageDialog";
-            this.openImageDialog.Size = new System.Drawing.Size(180, 22);
+            this.openImageDialog.Size = new System.Drawing.Size(156, 22);
             this.openImageDialog.Text = "Загрузить";
             this.openImageDialog.Click += new System.EventHandler(this.bt_download_Click);
             // 
             // Save
             // 
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(180, 22);
+            this.Save.Size = new System.Drawing.Size(156, 22);
             this.Save.Text = "Сохранить как";
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // Create_new
             // 
             this.Create_new.Name = "Create_new";
-            this.Create_new.Size = new System.Drawing.Size(180, 22);
+            this.Create_new.Size = new System.Drawing.Size(156, 22);
             this.Create_new.Text = "Создать новый";
             this.Create_new.Click += new System.EventHandler(this.Create_new_Click);
             // 
@@ -233,10 +233,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel p_color;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 

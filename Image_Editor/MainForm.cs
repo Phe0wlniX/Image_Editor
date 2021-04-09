@@ -99,7 +99,11 @@ namespace Image_Editor
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if (saveFile.ShowDialog())
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFile.FileName;
+                imageField.savePbImage(saveFile.FileName);
+            }
         }
     }
 }
